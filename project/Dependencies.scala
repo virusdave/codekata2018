@@ -10,6 +10,7 @@ object Dependencies {
 
   private object LibraryVersions {
     val Ammonite = "1.4.4"
+    val Cats = "1.5.0-RC1"
     val Enumeratum = "1.5.13"
     val Postgres = "42.2.5"
     val Shapeless = "2.3.3"
@@ -24,6 +25,7 @@ object Dependencies {
 
   private object Libraries {
     val Ammonite = "com.lihaoyi" % "ammonite" % LibraryVersions.Ammonite % "test" cross CrossVersion.full
+    val Cats = "org.typelevel" %% "cats-core" % LibraryVersions.Cats
     val Enumeratum = "com.beachape" %% "enumeratum" % LibraryVersions.Enumeratum
     val EnumeratumPlayJson = "com.beachape" %% "enumeratum-play-json" % LibraryVersions.Enumeratum
     val Postgres = "org.postgresql" % "postgresql" % LibraryVersions.Postgres
@@ -63,6 +65,7 @@ object Dependencies {
   }
 
   val commonDependencies: Set[ModuleID] = Set(
+    Libraries.Cats,
     Libraries.Postgres,
     Libraries.Shapeless,
     Libraries.Slickless,
@@ -82,6 +85,11 @@ object Dependencies {
       )
 
   val day2Dependencies: Set[ModuleID] =
+    commonDependencies ++
+      Set(
+      )
+
+  val day3Dependencies: Set[ModuleID] =
     commonDependencies ++
       Set(
       )
